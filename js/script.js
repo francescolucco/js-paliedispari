@@ -27,49 +27,58 @@
 let pariODispari = prompt('Mi dici per favore pari o dispari?');
 console.log('Hai scelto: ', pariODispari);
 
+
 // Utente inserisce un numero da 1 a 5
-let numeroUtente = prompt('Inserisci un numero da 1 a 5');
+let numeroUtente = parseInt(prompt('Inserisci un numero da 1 a 5'));
+if(numeroUtente > 5){
+  alert('Il numero inserito non è valido! Inserisci un nuovo numero compreso tra 1 a 5');
+}
 console.log('Hai scelto il numero: ', numeroUtente);
+
 
 // Il computer genera un numero random da 1 a 5
 let numeroRandom = getRandomNumber(1, 5);
-console.log('Il computer ha estratto: ', numeroRandom);
-
-// Sommiamo i due numeri
-let somma = sommaDueNuemri(numeroUtente, numeroRandom);
-console.log('La somma è: ', somma);
-
-// Stabiliamo se la somma è pari o dispari
-let dispariOPari = getPariODispari(somma);
-console.log('Quindi è: ', dispariOPari);
-
-// Dichiariamo chi ha vinto
-let esitoMatch = esitoFinaleMatch(pariODispari, somma);
-console.log('Pertanto: ', esitoMatch);
 
 function getRandomNumber(min, max){
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+console.log('Il computer ha estratto: ', numeroRandom);
+
+
+// Sommiamo i due numeri
+let somma = sommaDueNuemri(numeroUtente, numeroRandom);
 
 function sommaDueNuemri(num1, num2){
   let sommaX = (num1 + num2);
   return sommaX;
 }
+console.log('La somma è: ', somma);
+
+
+// Stabiliamo se la somma è pari o dispari
+let dispariOPari = getPariODispari(somma);
 
 function getPariODispari(num){
   if (num % 2 === 0) {
-  console.log("La somma è pari");
-} else {
-  console.log("La somma è dispari");
+    console.log("La somma è pari");
+  } else {
+    console.log("La somma è dispari");
+  }
 }
-}
+
+// Dichiariamo chi ha vinto
+let esitoMatch = esitoFinaleMatch(pariODispari, somma);
 
 function esitoFinaleMatch(vittoria, sommatot){
   if (vittoria === "pari" && sommatot % 2 === 0) {
-  console.log("Hai vinto");
-} else if(vittoria === "dispari" && sommatot % 2 !== 0) {
-  console.log("Hai vinto");
-} else {
-  console.log('Hai perso');
+    console.log("Hai vinto");
+  } else if(vittoria === "dispari" && sommatot % 2 !== 0) {
+    console.log("Complimenti! Hai vinto!");
+  } else {
+    console.log('Ci dispiace, hai perso!');
+  }
 }
-}
+
+
+
+
