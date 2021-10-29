@@ -2,19 +2,19 @@
 // Chiedere all’utente di inserire una parola
 // Creare una funzione per capire se la parola inserita è palindroma
 
-// let wordUser = prompt('Inserisci una parola');
-// console.log(wordUser);
-// let parolapalindroma = palindromo(wordUser);
+let wordUser = prompt('Inserisci una parola');
+console.log(wordUser);
+let parolapalindroma = palindromo(wordUser);
 
-// function palindromo(word){
-//   let wordReverse = word.split("").reverse().join("");
+function palindromo(word){
+  let wordReverse = word.split("").reverse().join("");
   
-//   if (word === wordReverse) {
-//     console.log("The string is a palindrome");
-//   } else {
-//     console.log("NOT a palindrome");
-//   }
-// }
+  if (word === wordReverse) {
+    console.log("The string is a palindrome");
+  } else {
+    console.log("NOT a palindrome");
+  }
+}
 
 
 // **Pari e Dispari**
